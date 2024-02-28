@@ -1,15 +1,52 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
-import "../../styles/home.css";
+import React, { useContext } from "react";
+import CharCard from "../component/charCard";
+import PlanetCard from "../component/planetCard";
+import ShipCard from "../component/shipCard";
+import { Context } from "../store/appContext";
+import "../../styles/home.scss";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+export const Home = () => {
+	const { store } = useContext(Context);
+
+	return (
+		<Container>
+			<Row>
+				<Col>
+					<h2 className="heading">Characters</h2>
+				</Col>
+			</Row>
+			<Row>
+				<div className="d-flex justify-content-between overFlow">
+					{store.people
+						? store.people.map((elem, index) => <CharCard key={index} id={++index} character={elem} />)
+						: ""}
+				</div>
+			</Row>
+			<Row>
+				<Col>
+					<h2 className="heading">Planets</h2>
+				</Col>
+			</Row>
+			<Row>
+				<div className="d-flex justify-content-between overFlow">
+					{store.planets
+						? store.planets.map((elem, index) => <PlanetCard key={index} id={++index} planet={elem} />)
+						: ""}
+				</div>
+			</Row>
+			<Row>
+				<Col>
+					<h2 className="heading">Start Ships</h2>
+				</Col>
+			</Row>
+			<Row>
+				<div className="d-flex justify-content-between overFlow">
+					{store.starShips
+						? store.starShips.map((elem, index) => <ShipCard key={index} id={++index} ship={elem} />)
+						: ""}
+				</div>
+			</Row>
+		</Container>
+	);
+};
+
