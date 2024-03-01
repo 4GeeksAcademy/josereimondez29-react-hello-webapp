@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/single.css";
 import {Container, Jumbotron, Col, Row} from "react-bootstrap";
+import darthvader from "./../../img/darthvader.jpg";
 
 export const Single = () => {
 	const { store, actions } = useContext(Context);
@@ -14,10 +15,10 @@ console.log(url)
 console.log(charStore)
 	return (
 		<Container>
-			<Jumbotron className="jumbo">
+			<div className="jumbo">
 				<div className="d-flex justify-content-between">
 					<img
-						src="../img/darthvader.jpg"
+						src={darthvader}
 						width="400"
 					/>
 					<div className="text">
@@ -40,7 +41,7 @@ console.log(charStore)
 				) : (
 					""
 				)}
-			</Jumbotron>
+			</div>
 		</Container>
 	);
 };
