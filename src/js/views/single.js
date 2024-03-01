@@ -2,15 +2,16 @@ import React, { useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/single.css";
+import {Container, Jumbotron, Col, Row} from "react-bootstrap";
 
 export const Single = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	let url = `https://www.swapi.tech/api/people/${params.uid}`;
-
+console.log(url)
 	const charStore = store.character.filter(char => char.url == url);
 	useEffect(() => actions.charDescription(url), []);
-
+console.log(charStore)
 	return (
 		<Container>
 			<Jumbotron className="jumbo">
@@ -21,10 +22,7 @@ export const Single = () => {
 					/>
 					<div className="text">
 						{charStore[0] ? <h1 className="display-4">{charStore[0].name}</h1> : ""}
-						<p>
-							Here we should have a description of each StarWars element, but this api doesn't
-							provide one, at least not personalized.
-						</p>
+						
 					</div>
 				</div>
 				<hr className="my-4 hr" />

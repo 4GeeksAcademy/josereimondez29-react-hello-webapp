@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-
+import { Container, Row, Col, Dropdown } from "react-bootstrap";
+import starwarslogo from "./../../img/starwarslogo.png";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 
@@ -13,7 +14,7 @@ export const Navbar = () => {
 						<Link to="/">
 							<span className="navbar-brand m-2 h1">
 								<img
-									src="../img/starwarslogo.png"
+									src={starwarslogo}
 									width="90"
 								/>
 							</span>

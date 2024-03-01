@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
+import deathstar from "./../../img/deathstar.jpg";
+import { Col, Card, Button } from "react-bootstrap";
 
 const ShipCard = props => {
 	const { store, actions } = useContext(Context);
@@ -13,7 +15,7 @@ const ShipCard = props => {
 			<Card>
 				<Card.Img
 					variant="top"
-					src="../img/deathstar.jpg"
+					src={deathstar}
 				/>
 				<Card.Body>
 					<Card.Title>{props.ship.name}</Card.Title>

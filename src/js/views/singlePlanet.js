@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/single.css";
+import {Container, Jumbotron, Col, Row} from "react-bootstrap";
 
 export const SinglePlanet = () => {
 	const { store, actions } = useContext(Context);

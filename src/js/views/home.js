@@ -4,6 +4,8 @@ import PlanetCard from "../component/planetCard";
 import ShipCard from "../component/shipCard";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
+import { Container, Row, Col } from "react-bootstrap";
+
 
 export const Home = () => {
 	const { store } = useContext(Context);
