@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/single.scss";
+import "../../styles/single.css";
 
 export const SinglePlanet = () => {
 	const { store, actions } = useContext(Context);
